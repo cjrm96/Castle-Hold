@@ -1,0 +1,30 @@
+{
+  "name": "castle-siege",
+  "productName": "Castle Siege",
+  "version": "1.1.0",
+  "description": "Medieval castle building and siege warfare",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win dir",
+    "dist:linux": "electron-builder --linux dir",
+    "dist:mac": "electron-builder --mac dir"
+  },
+  "devDependencies": {
+    "electron": "44.7.0",
+    "electron-builder": "26.17.0"
+  },
+  "optionalDependencies": {
+    "steamworks.js": "0.4.0"
+  },
+  "build": {
+    "appId": "com.castlesiege.game",
+    "productName": "Castle Siege",
+    "files": ["main.js", "preload.js", "app/**/*"],
+    "asarUnpack": ["node_modules/steamworks.js/**/*"],
+    "win": { "target": "dir" },
+    "linux": { "target": "dir", "category": "Game" },
+    "mac": { "target": "dir", "category": "public.app-category.strategy-games" }
+  }
+}

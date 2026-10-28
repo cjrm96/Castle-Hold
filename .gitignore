@@ -1,4 +1,5 @@
 .DS_Store
 Thumbs.db
-*.zip
+__pycache__/
+dist/
 node_modules/
